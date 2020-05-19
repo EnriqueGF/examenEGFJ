@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 /**
  *
- * @author javier
+ * @author Enrique García-Ferrer Jiménez
  */
 public class IntroducirBusqueda extends javax.swing.JDialog {
     private int aceptarCancelar;
     /**
-     * Creates new form IntroducirBusqueda
+     * Crea un nuevo formulario IntroducirBusqueda
      */
     public IntroducirBusqueda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -21,10 +16,16 @@ public class IntroducirBusqueda extends javax.swing.JDialog {
         iniciarComponentes();
     }
     
+    /**
+     * Inicia los componentes.
+     */    
     public void iniciarComponentes(){
         aceptarCancelar = 0;
     }
     
+    /**
+     * Botón de aceptar.
+     */    
     public void aceptar(){
         aceptarCancelar = 1;
         this.dispose();
@@ -123,6 +124,7 @@ public class IntroducirBusqueda extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
     /**
+     * Método Main
      * @param args the command line arguments
      */
     public static void main(String args[]) {

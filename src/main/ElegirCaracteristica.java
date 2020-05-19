@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
+
 /**
  *
- * @author javier
+ * @author Enrique García-Ferrer Jiménez
  */
 public class ElegirCaracteristica extends javax.swing.JDialog {
 
@@ -19,7 +15,7 @@ public class ElegirCaracteristica extends javax.swing.JDialog {
     private int aceptarCancelar;
 
     /**
-     * Creates new form ElegirCaracteristica
+     * Crea una nuevo formulario llamado ElegirCaracteristica
      */
     public ElegirCaracteristica(java.awt.Frame parent, boolean modal, ArrayList<String> cadenas) {
         super(parent, modal);
@@ -28,13 +24,18 @@ public class ElegirCaracteristica extends javax.swing.JDialog {
 
         iniciarComponentes();
     }
-
+    /**
+     * Inicia los componentes.
+     */
     public void iniciarComponentes() {
         modeloCombo = new DefaultComboBoxModel();
         aceptarCancelar = 0;
         cargarCombo();
     }
-
+    
+    /**
+     * Carga el combo.
+     */
     public void cargarCombo() {
         for (String str : cadenas) {
             modeloCombo.addElement(str);
@@ -43,6 +44,9 @@ public class ElegirCaracteristica extends javax.swing.JDialog {
         comboBox.setModel(modeloCombo);
     }
 
+     /**
+     * Devuelve un string del item seleccionado.
+     */
     public String getSelectedItem() {
         return (String) comboBox.getSelectedItem();
     }
@@ -50,12 +54,18 @@ public class ElegirCaracteristica extends javax.swing.JDialog {
     public int getAceptarCancelar(){
         return aceptarCancelar;
     }
-    
+ 
+     /**
+     * Ventana de aceptar.
+     */
     public void aceptar(){
         aceptarCancelar = 1;
         this.dispose();
     }
     
+     /**
+     * Ventana de cancelar.
+     */   
     public void cancelar(){
         aceptarCancelar = -1;
         this.dispose();

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 import java.util.ArrayList;
@@ -16,7 +11,7 @@ import org.hibernate.Transaction;
 
 /**
  *
- * @author javier
+ * @author Enrique García-Ferrer Jiménez
  */
 public class Controlador {
 
@@ -36,7 +31,10 @@ public class Controlador {
         
         return films;
     }
-    
+    /**
+     *
+     * Busca una película en la base de datos por nombre.
+     */    
     public List<Film> buscarPeliculas(String pelicula){
         List<Film> films = null;
         pelicula = "'%" + pelicula + "%'";
@@ -56,6 +54,10 @@ public class Controlador {
         return films;
     }
     
+    /**
+     *
+     * Busca una película en la base de datos por categoría.
+     */        
     public List<Film> buscarPorCategoria(String categoria){
         List<Film> films = null;
         categoria = "'%" + categoria + "%'";
@@ -77,7 +79,10 @@ public class Controlador {
         
         return films;
     }
-    
+    /**
+     *
+     * Busca una película en la base de datos por características especiales.
+     */      
     public List<Film> buscarPorCaracteristicasEspeciales(String caracteristicas){
         List<Film> films = null;
         caracteristicas = "'%" + caracteristicas + "%'";
@@ -96,7 +101,10 @@ public class Controlador {
         
         return films;
     }
-    
+    /**
+     *
+     * Retorna una lista de categorías.
+     */     
     public List<String> categorias(){
         List<String> categorias = null;
         
@@ -115,6 +123,10 @@ public class Controlador {
         return categorias;
     }
     
+     /**
+     *
+     * Retorna un ArrayList de categorías.
+     */ 
     public ArrayList<String> arrayCategorias(){
         List<String> categorias = categorias();
         ArrayList<String> aux = new ArrayList<>();
@@ -126,6 +138,10 @@ public class Controlador {
         return aux;
     }
     
+     /**
+     *
+     * Retorna una lista de características.
+     */ 
     public List<String> caracteristicas(){
         List<String> caracteristicas = null;
         
@@ -144,6 +160,10 @@ public class Controlador {
         return caracteristicas;
     }
     
+    /**
+     *
+     * Retorna un arraylist de características.
+     */     
     public ArrayList<String> arrayCaracteristicas(){
         ArrayList<String> aux = new ArrayList<>();
         List<String> list = caracteristicas();

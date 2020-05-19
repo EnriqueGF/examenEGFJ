@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 import java.util.List;
@@ -11,7 +6,8 @@ import newpackage.Film;
 
 /**
  *
- * @author javier
+ * @author Enrique García-Ferrer Jiménez
+ * Clase MainWindow
  */
 public class MainWindow extends javax.swing.JFrame {
     private String busqueda;
@@ -20,7 +16,7 @@ public class MainWindow extends javax.swing.JFrame {
     private Controlador controlador;
 
     /**
-     * Creates new form MainWindow
+     * Crea un nuevo formulario  MainWindow
      */
     public MainWindow() {
         initComponents();
@@ -28,6 +24,9 @@ public class MainWindow extends javax.swing.JFrame {
         iniciarComponentes();
     }
     
+     /**
+     * Inicia los componentes
+     */
     public void iniciarComponentes(){
         busqueda = "";
         peliculas = null;
@@ -36,6 +35,9 @@ public class MainWindow extends javax.swing.JFrame {
         actionButtonListar();
     }
     
+     /**
+     * Inicia la tabla
+     */    
     public void iniciarTabla(){
         modeloTabla.addColumn("Título");
         modeloTabla.addColumn("Año");
@@ -45,6 +47,9 @@ public class MainWindow extends javax.swing.JFrame {
         tabla.setModel(modeloTabla);
     }
     
+    /**
+     * Actualiza la tabla
+     */
     public void actualizarTabla(){
         limpiarTabla();
         
@@ -54,6 +59,9 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Limpia la tabla
+     */    
     public void limpiarTabla(){
         int rows = modeloTabla.getRowCount();
         
@@ -62,6 +70,9 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Lista los elementos de la tabla, películas
+     */  
     public void listar(){
         peliculas = controlador.listar();
     }
@@ -71,6 +82,9 @@ public class MainWindow extends javax.swing.JFrame {
         actualizarTabla();
     }
     
+     /**
+     * Busca películas por nombre
+     */  
     public void buscarNombre(){
         peliculas = controlador.buscarPeliculas(busqueda);
     }
@@ -86,6 +100,9 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Busca por películas por categoría
+     */  
     public void buscarCategoria(){
         peliculas = controlador.buscarPorCategoria(busqueda);
     }
